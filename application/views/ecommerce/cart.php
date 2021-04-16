@@ -40,7 +40,8 @@
                             <td>$<?= $item["price"] ?></td>
                             <td>$<?= $item["sub_total"] ?></td>
                             <td>
-                                <form class="" action="<?php base_url()?>remove_item" method="POST">     
+                                    <?php echo form_open(base_url()."remove_item")?>
+                                <!-- <form class="" action="<?php base_url()?>remove_item" method="POST">      -->
                                     <input type="hidden" name="product-id" value="<?= $item["product_id"]; ?>">
                                     <input type="submit" class="btn btn-danger btn-sm" value="Delete">                            
                                 </form>
@@ -64,7 +65,8 @@
 
                 <?= $this->session->flashdata("errors") ?>
                 
-                <form action="<?= base_url()?>checkout_process" method="POST">
+                <?php echo form_open('checkout_process');?>
+                <!-- <form action="checkout_process" method="POST"> -->
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" value=""  placeholder="Enter Your Name">

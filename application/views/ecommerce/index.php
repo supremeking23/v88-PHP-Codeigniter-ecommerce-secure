@@ -43,7 +43,8 @@
                             <td><?= $product["description"]; ?></td>
                             <td>$<?= $product["price"]; ?></td>
                             <td>
-                                <form class="" action="<?php base_url()?>add-to-cart" method="POST">
+                                <!-- <form class="" action="<?php base_url()?>add-to-cart" method="POST"> -->
+                                <?php echo form_open(base_url()."add-to-cart")?>
                                     <input type="number" name="qty" class="form-control" value="" id="qty">
                                     <input type="hidden" name="product-id" value="<?= $product["id"]?>">
                                     <input type="hidden" name="product-name" value="<?= $product["product_name"]; ?>">
